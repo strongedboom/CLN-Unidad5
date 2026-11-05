@@ -1,0 +1,10 @@
+﻿rol,es_propietario,estado,antiguedad,esperado,real,estado_prueba
+Propietario,Sí,NEW,1 h,Permitido,Permitido,PASSED
+Propietario,Sí,NEW,23.9833 h,Permitido,Permitido,PASSED
+Propietario,Sí,NEW,24 h,Denegado,Denegado,PASSED
+Propietario,Sí,NEW,25 h,Denegado,Denegado,PASSED
+Propietario,Sí,SHIPPED,1 h,Denegado,Denegado,PASSED
+Tercero,No,NEW,1 h,Denegado,Denegado,PASSED
+Administrador,No,NEW,240 h,Permitido,Permitido,PASSED
+Administrador,No,CONFIRMED,1 h,Permitido,Permitido,PASSED
+Administrador,No,SHIPPED,1 h,Denegado,Denegado,PASSED

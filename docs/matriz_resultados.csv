@@ -1,0 +1,16 @@
+﻿caso_id,regla,entrada,resultado_esperado,resultado_real,estado,tipo
+CP01,Descuento VIP 15% / cliente regular sin descuento,"total=120, vip=0, deuda=0, estado=NEW","CONFIRMED, cobro 120.00","CONFIRMED, cobro 120.00",PASSED,Éxito
+CP02,Descuento VIP 15% / cliente regular sin descuento,"total=200, vip=1, deuda=0, estado=NEW","CONFIRMED, cobro 170.00","CONFIRMED, cobro 170.00",PASSED,Éxito
+CP03,No confirmar con deuda pendiente,"total=150, vip=0, deuda=500, estado=NEW",CustomerHasDebt,CustomerHasDebt: outstanding debt,PASSED,Error
+CP04,Total debe ser positivo,"total=0, vip=0, deuda=0, estado=NEW",ValueError,ValueError: total must be positive,PASSED,Error
+CP05,Total debe ser positivo,"total=-10, vip=0, deuda=0, estado=NEW",ValueError,ValueError: total must be positive,PASSED,Error
+CP06,Descuento VIP 15% / cliente regular sin descuento,"total=1000, vip=1, deuda=0, estado=NEW","CONFIRMED, cobro 850.00","CONFIRMED, cobro 850.00",PASSED,Éxito
+CP07,Total mínimo 0.01 sin descuento por redondeo,"total=0.01, vip=1, deuda=0, estado=NEW","CONFIRMED, cobro 0.01","CONFIRMED, cobro 0.01",PASSED,Límite
+CP08,No confirmar dos veces (TDD),"total=250, vip=0, deuda=0, estado=CONFIRMED",ValueError: already confirmed (tras TDD; antes: CONFIRMED),ValueError: already confirmed,PASSED,Límite
+CP09,Descuento VIP 15% / cliente regular sin descuento,"total=300, vip=1, deuda=0, estado=NEW","CONFIRMED, cobro 255.00","CONFIRMED, cobro 255.00",PASSED,Éxito
+CP10,Descuento VIP 15% / cliente regular sin descuento,"total=75, vip=0, deuda=0, estado=NEW","CONFIRMED, cobro 75.00","CONFIRMED, cobro 75.00",PASSED,Éxito
+CP11,No confirmar con deuda pendiente,"total=500, vip=1, deuda=250, estado=NEW",CustomerHasDebt,CustomerHasDebt: outstanding debt,PASSED,Error
+CP12,Descuento VIP 15% / cliente regular sin descuento,"total=99.99, vip=1, deuda=0, estado=NEW","CONFIRMED, cobro 84.99","CONFIRMED, cobro 84.99",PASSED,Límite
+CP13,Pago rechazado por la pasarela,"Mock charge()=False, Order(100)",RuntimeError: payment rejected,Cubierto por test_service / test_repository (ejecutar pytest en tu equipo),PENDIENTE DE TU EJECUCIÓN,Error
+CP14,Persistencia: commit,"save(1, Order(120)) + commit",Registro visible después de commit,Cubierto por test_service / test_repository (ejecutar pytest en tu equipo),PENDIENTE DE TU EJECUCIÓN,Éxito
+CP15,Persistencia: rollback,"save(1, Order(120)) + rollback",Registro ausente después de rollback,Cubierto por test_service / test_repository (ejecutar pytest en tu equipo),PENDIENTE DE TU EJECUCIÓN,Error

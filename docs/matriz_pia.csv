@@ -1,0 +1,10 @@
+﻿id,regla,entrada,resultado_esperado,resultado_real,estado,tipo
+CP-PIA-01,R1 No vender sin inventario,"stock=10, cantidad=3",Stock restante=7,Stock restante=7,PASSED,Éxito
+CP-PIA-02,R1 No vender sin inventario,"stock=2, cantidad=3",OutOfStock,OutOfStock,PASSED,Error
+CP-PIA-03,R1 No vender sin inventario,"stock=3, cantidad=3",Stock restante=0,Stock restante=0,PASSED,Límite
+CP-PIA-04,R2 Cantidad entera positiva,"stock=5, cantidad=1",Stock restante=4,Stock restante=4,PASSED,Éxito
+CP-PIA-05,R2 Cantidad entera positiva,cantidad=-1,InvalidQuantity,InvalidQuantity,PASSED,Error
+CP-PIA-06,R2 Cantidad entera positiva,cantidad=0,InvalidQuantity,InvalidQuantity,PASSED,Límite
+CP-PIA-07,R3 Reabastecer dentro de capacidad,"stock=10, reponer=5",Stock=15,Stock=15,PASSED,Éxito
+CP-PIA-08,R3 Reabastecer dentro de capacidad,"stock=10, reponer=-3",InvalidQuantity,InvalidQuantity,PASSED,Error
+CP-PIA-09,R3 Reabastecer dentro de capacidad,"stock=990, reponer=10 (tope 1000)",Stock=1000,Stock=1000,PASSED,Límite
