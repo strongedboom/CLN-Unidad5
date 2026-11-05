@@ -11,7 +11,7 @@ def test_vip_discount():
 
 
 def test_regular_no_discount():
-    assert Order(200).confirm() == 999
+    assert Order(100).confirm() == 100
 
 
 def test_customer_debt():
